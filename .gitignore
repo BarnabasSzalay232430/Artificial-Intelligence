@@ -1,0 +1,17 @@
+# Python / Jupyter build artefacts
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Notebook generator used during development (the executed .ipynb is the source of truth now;
+# re-running this script would overwrite the notebook with an unexecuted copy)
+build_notebook.py
+
+# Local-only explainer page (published separately, not part of the submission)
+explainer/
+
+# OS / editor files
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
