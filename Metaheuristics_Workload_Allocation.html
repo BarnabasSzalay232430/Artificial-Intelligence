@@ -7796,7 +7796,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=361dbda5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5b0a56ad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7854,7 +7854,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7fb17eef">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=12828c38">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7864,7 +7864,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c19a6a2b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cfb69328">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7900,7 +7900,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f122686d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0f108223">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7910,7 +7910,7 @@ a.anchor-link {
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="nd">@dataclass</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Instance</span><span class="p">:</span>
-    <span class="c1"># One problem instance plus the extra values computed in Section 0</span>
+<span class="w">    </span><span class="sd">"""One problem instance (utilities, resource use, capacities) plus the values computed in Section 0."""</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">n</span><span class="p">:</span> <span class="nb">int</span>                     <span class="c1"># number of candidate models</span>
     <span class="n">m</span><span class="p">:</span> <span class="nb">int</span>                     <span class="c1"># number of resources</span>
@@ -7922,7 +7922,7 @@ a.anchor-link {
     <span class="n">duals</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span> <span class="o">=</span> <span class="kc">None</span>   <span class="c1"># shadow price of each resource (own code, §0.2) - used by the repair</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">load</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-    <span class="c1"># Load a file with the provided helper and sanity-check its contents</span>
+<span class="w">    </span><span class="sd">"""Load an instance file with the provided helper, sanity-check it, and return an Instance."""</span>
     <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">load_workload_instance</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">p</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">n</span><span class="p">,)</span> <span class="ow">and</span> <span class="n">R</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span> <span class="ow">and</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="n">m</span><span class="p">,)</span>     <span class="c1"># shapes match n and m</span>
     <span class="k">assert</span> <span class="p">(</span><span class="n">R</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="ow">and</span> <span class="p">(</span><span class="n">p</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>                              <span class="c1"># no negative values</span>
@@ -7930,8 +7930,11 @@ a.anchor-link {
     <span class="k">return</span> <span class="n">Instance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">find_data_file</span><span class="p">(</span><span class="o">*</span><span class="n">names</span><span class="p">,</span> <span class="n">folders</span><span class="o">=</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"data"</span><span class="p">)):</span>
-    <span class="c1"># Look for the file next to this notebook or in ./data, under any of the given names</span>
-    <span class="c1"># (Canvas downloads sometimes add " (1)" to the file name)</span>
+<span class="w">    </span><span class="sd">"""Return the path of the first matching data file, looking next to the notebook and in ./data.</span>
+
+<span class="sd">    Several names can be given because Canvas downloads sometimes add " (1)" to the file name.</span>
+<span class="sd">    Raises FileNotFoundError if none is found.</span>
+<span class="sd">    """</span>
     <span class="k">for</span> <span class="n">folder</span> <span class="ow">in</span> <span class="n">folders</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span><span class="p">:</span>
             <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">folder</span><span class="p">)</span> <span class="o">/</span> <span class="n">name</span>
@@ -8022,18 +8025,18 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d1b98da4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1db75f0c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Tightness</strong> is a resource's capacity divided by the total amount all models together would need. On Instance 2, resource 2 can only cover a third of the total demand (0.33), while resources 4 and 5 could cover almost all of it (0.95, 0.91). This is a first hint that resource 2 is the bottleneck, which §0.2 confirms.</p>
-<h3 id="0.1-Reference-optimum-(answer-key-for-scoring)">0.1 Reference optimum (answer key for scoring)<a class="anchor-link" href="#0.1-Reference-optimum-(answer-key-for-scoring)">¶</a></h3><p>The instances are small enough for an exact solver (mixed-integer programming via <code>scipy.optimize.milp</code>) to find the <strong>true best selection</strong>. It is used <strong>only</strong> to score results: the optimality gap, $100\,(f^*-f)/f^*$ (how far a run falls short of the best, in %), and the success rate (how many runs reach it).</p>
+<h3 id="0.1-Reference-optimum-(answer-key-for-scoring)">0.1 Reference optimum (answer key for scoring)<a class="anchor-link" href="#0.1-Reference-optimum-(answer-key-for-scoring)">¶</a></h3><p>The instances are small enough for an exact algorithm (branch and bound, via SciPy's mixed-integer solver <code>scipy.optimize.milp</code>) to find the <strong>true best selection</strong>, i.e. the global optimum. It is used <strong>only</strong> to score results: the optimality gap, $100\,(f^*-f)/f^*$ (how far a run falls short of the best, in %), and the success rate (how many runs reach it).</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9d59b280">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=975aef08">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8042,7 +8045,10 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">solve_reference</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
-    <span class="c1"># Exact optimum via mixed-integer programming. Used ONLY to score the algorithms afterwards.</span>
+<span class="w">    </span><span class="sd">"""Find the exact optimum with SciPy's MILP solver, store it in I.optimum and return the 0/1 vector.</span>
+
+<span class="sd">    Used ONLY as the answer key for scoring the algorithms; no algorithm ever calls it.</span>
+<span class="sd">    """</span>
     <span class="c1"># milp minimises, so we pass -p to maximise utility; integrality=1 forces every x_j to be 0 or 1.</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">milp</span><span class="p">(</span><span class="o">-</span><span class="n">I</span><span class="o">.</span><span class="n">p</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">LinearConstraint</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">R</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">),</span>
                <span class="n">integrality</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">n</span><span class="p">),</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Bounds</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
@@ -8077,13 +8083,13 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0c67b85">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8ffbf0b7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="0.2-Shadow-prices-(computed-from-scratch)">0.2 Shadow prices (computed from scratch)<a class="anchor-link" href="#0.2-Shadow-prices-(computed-from-scratch)">¶</a></h3><p>When a selection is over a limit, the repair operator (§1.1) has to decide which models to remove first. For that it needs to know <strong>how scarce each resource is</strong>. We measure this with one <em>shadow price</em> λᵢ ≥ 0 per resource, computed by our own Lagrangian relaxation with subgradient descent (Fisher, 1981; Held, Wolfe &amp; Crowder, 1974):</p>
+<h3 id="0.2-Shadow-prices-(computed-from-scratch)">0.2 Shadow prices (computed from scratch)<a class="anchor-link" href="#0.2-Shadow-prices-(computed-from-scratch)">¶</a></h3><p>When a selection is over a limit, the repair operator (§1.1) has to decide which models to remove first. For that it needs to know <strong>how scarce each resource is</strong>. We measure this with one <em>shadow price</em> λᵢ ≥ 0 per resource, computed by our own Lagrangian relaxation (a standard way of generating bounds) with subgradient descent (Fisher, 1981; Held, Wolfe &amp; Crowder, 1974):</p>
 <ol>
 <li>Instead of treating each capacity as a hard limit, each resource is given a price per unit used. With fixed prices the best choice is simple: take every model whose utility is higher than the price of the resources it uses.</li>
 <li>If that choice over-uses a resource, its price goes up. If it leaves capacity spare, its price goes down (never below 0).</li>
@@ -8094,7 +8100,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3cbbeabc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3cc9bd59">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8103,8 +8109,10 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">greedy_lower_bound</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
-    <span class="c1"># A quick valid selection, needed for the step-size rule below:</span>
-    <span class="c1"># add models in order of utility per (capacity-scaled) resource use, skipping any that do not fit</span>
+<span class="w">    </span><span class="sd">"""Return the utility of a quick feasible selection (needed for the subgradient step size).</span>
+
+<span class="sd">    Models are added in order of utility per capacity-scaled resource use, skipping any that do not fit.</span>
+<span class="sd">    """</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">load</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">n</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">m</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="o">-</span><span class="n">I</span><span class="o">.</span><span class="n">p</span> <span class="o">/</span> <span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">R</span> <span class="o">/</span> <span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">[:,</span> <span class="kc">None</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="mi">0</span><span class="p">)):</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">load</span> <span class="o">+</span> <span class="n">I</span><span class="o">.</span><span class="n">R</span><span class="p">[:,</span> <span class="n">j</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">():</span>
@@ -8113,7 +8121,12 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
     <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">p</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">compute_shadow_prices</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">iters</span><span class="o">=</span><span class="mi">5_000</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">2.0</span><span class="p">,</span> <span class="n">patience</span><span class="o">=</span><span class="mi">50</span><span class="p">):</span>
-    <span class="c1"># Lagrangian relaxation of the capacity limits, minimised by subgradient descent (see text above)</span>
+<span class="w">    </span><span class="sd">"""Compute one shadow price per resource by Lagrangian relaxation and subgradient descent (§0.2).</span>
+
+<span class="sd">    Stores the prices in I.duals and the resulting upper bound in I.bound, and returns (prices, bound).</span>
+<span class="sd">    iters: maximum number of steps; alpha: initial step scale; patience: steps without</span>
+<span class="sd">    improvement before alpha is halved.</span>
+<span class="sd">    """</span>
     <span class="n">lam</span><span class="p">,</span> <span class="n">LB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">m</span><span class="p">),</span> <span class="n">greedy_lower_bound</span><span class="p">(</span><span class="n">I</span><span class="p">)</span>    <span class="c1"># start with every resource free (price 0)</span>
     <span class="n">best_val</span><span class="p">,</span> <span class="n">best_lam</span><span class="p">,</span> <span class="n">stall</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">lam</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iters</span><span class="p">):</span>
@@ -8151,15 +8164,27 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Instance 1 (n=28, m=2): shadow prices = [  4.4  107.28]   Lagrangian upper bound = 131,637.5  (true optimum 130,883)
-Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagrangian upper bound = 11,194.7  (true optimum 11,191)
+<pre>Instance 1 (n=28, m=2): shadow prices = [  4.4  107.28]   Lagrangian upper bound = 131,637.5  (true optimum 130,883)</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagrangian upper bound = 11,194.7  (true optimum 11,191)
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5a39c07e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c9a0407">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8170,7 +8195,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=869b17c2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f2ca538">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8187,15 +8212,15 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <tbody>
 <tr>
 <td><code>Evaluator</code></td>
-<td>the <strong>only</strong> way to score a selection. It stops at the evaluation budget, counts how many candidates were valid, and records the best valid utility after every evaluation (used for the convergence curves)</td>
+<td>the <strong>only</strong> way to score a selection. It stops at the evaluation budget, counts how many candidates were feasible, and records the best-so-far value after every evaluation (used for the convergence curves)</td>
 </tr>
 <tr>
 <td><code>ConstraintHandler</code> classes</td>
-<td>decide how invalid selections are treated: <code>initial()</code> builds a starting selection, <code>prepare()</code> runs before scoring (e.g. repair), <code>fitness()</code> is the score the search compares</td>
+<td>decide how infeasible selections are treated: <code>initial()</code> builds a starting selection, <code>prepare()</code> runs before scoring (e.g. repair), <code>fitness()</code> is the score the search compares</td>
 </tr>
 <tr>
 <td>operators</td>
-<td>how selections change: flip and swap moves (hill climber), tournament selection, uniform crossover, bit-flip mutation (GA)</td>
+<td>how selections change: add/remove (flip) and swap neighbours (hill climber), tournament selection, uniform crossover, bit-flip mutation (GA)</td>
 </tr>
 <tr>
 <td><code>hill_climber</code>, <code>steady_state_ga</code></td>
@@ -8210,7 +8235,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0caa5bc3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=48ec7b8c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8219,30 +8244,36 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Evaluator</span><span class="p">:</span>
-    <span class="c1"># Scores selections and enforces the budget. One call to evaluate() = one fitness evaluation.</span>
+<span class="w">    </span><span class="sd">"""Scores selections and enforces the evaluation budget. One call to evaluate() = one fitness evaluation.</span>
+
+<span class="sd">    It also tracks the best feasible selection, how many evaluated candidates were feasible, and the</span>
+<span class="sd">    best-so-far value after every evaluation (the convergence trace).</span>
+<span class="sd">    """</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">budget</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">budget</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">used</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_feasible</span> <span class="o">=</span> <span class="n">inst</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">budget</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">best_util</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kc">None</span>          <span class="c1"># best VALID selection seen so far</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">trace</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">budget</span><span class="p">)</span>               <span class="c1"># best valid utility after each evaluation (convergence curve)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">best_util</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_x</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">,</span> <span class="kc">None</span>          <span class="c1"># best FEASIBLE selection seen so far</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">trace</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">budget</span><span class="p">)</span>               <span class="c1"># best-so-far value after each evaluation (convergence curve)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">remaining</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Number of evaluations left in the budget."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">budget</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">used</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">evaluate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Score selection x. Returns (utility, violation); violation = total amount over the limits (0 = feasible)."""</span>
         <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">used</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">budget</span><span class="p">,</span> <span class="s2">"evaluation budget exceeded"</span>   <span class="c1"># no algorithm can cheat the budget</span>
         <span class="n">util</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">p</span> <span class="o">@</span> <span class="n">x</span><span class="p">)</span>                                     <span class="c1"># total utility of the selection</span>
-        <span class="n">violation</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">R</span> <span class="o">@</span> <span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>  <span class="c1"># total amount over the limits (0 = valid)</span>
+        <span class="n">violation</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">R</span> <span class="o">@</span> <span class="n">x</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>  <span class="c1"># total amount over the limits (0 = feasible)</span>
         <span class="k">if</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">n_feasible</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="k">if</span> <span class="n">util</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_util</span><span class="p">:</span>                                  <span class="c1"># new best valid selection</span>
+            <span class="k">if</span> <span class="n">util</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_util</span><span class="p">:</span>                                  <span class="c1"># new best feasible selection</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">best_util</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_x</span> <span class="o">=</span> <span class="n">util</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">used</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_util</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">used</span> <span class="o">+=</span> <span class="mi">1</span>
         <span class="k">return</span> <span class="n">util</span><span class="p">,</span> <span class="n">violation</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">result</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="c1"># Summary of one run, scored against the answer key</span>
+<span class="w">        </span><span class="sd">"""Return a summary of the run (best utility, gap, success, evaluations to optimum, ...) scored against the answer key."""</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">used</span> <span class="o">&lt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">budget</span><span class="p">:</span>                      <span class="c1"># if the algorithm stopped early, carry the best value forward</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">trace</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">used</span><span class="p">:]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">best_util</span>
         <span class="n">opt</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">optimum</span>
@@ -8259,83 +8290,112 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=81609b70">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c264d147">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="1.1-Constraint-handling-strategies">1.1 Constraint-handling strategies<a class="anchor-link" href="#1.1-Constraint-handling-strategies">¶</a></h3><p>Three standard ways of dealing with selections that go over a limit (Coello Coello, 2002). Part 1 compares all three, and Part 3 compares the static penalty with repair.</p>
+<h3 id="1.1-Constraint-handling-strategies">1.1 Constraint-handling strategies<a class="anchor-link" href="#1.1-Constraint-handling-strategies">¶</a></h3><p>A selection is <em>feasible</em> if it respects every resource limit and <em>infeasible</em> otherwise. Crossover and mutation can turn feasible parents into an infeasible child, so the search needs a constraint-handling technique. We use three standard ones (Coello Coello, 2002). Part 1 compares all three, and Part 3 compares the static penalty with repair.</p>
 <ul>
-<li><p><strong>Death penalty:</strong> an over-limit selection gets fitness −∞ and is never accepted. The search starts from a random valid selection, made by removing random models until everything fits.</p>
+<li><p><strong>Death penalty:</strong> an infeasible candidate is immediately rejected (fitness −∞). The search starts from a random feasible selection, made by removing random models until everything fits.</p>
 </li>
-<li><p><strong>Static penalty:</strong> $F(x)=f(x)-\lambda\sum_i\max(0,\;R_i x-b_i)$, i.e. utility minus a fine proportional to the total amount over the limits. The fine per unit is $\lambda=\max_{i,j:\,r_{ij}&gt;0} p_j/r_{ij}$, the highest utility any model earns per unit of any resource, so breaking a limit never pays off (Olsen, 1994). Over-limit selections stay in the search and can act as stepping stones.</p>
+<li><p><strong>Static penalty:</strong> $F(x)=f(x)-\lambda\sum_i\max(0,\;R_i x-b_i)$. Utility minus a penalty proportional to the violation (the total amount over the limits), with a fixed penalty weight λ throughout the search. The weight is $\lambda=\max_{i,j:\,r_{ij}&gt;0} p_j/r_{ij}$, the highest utility any model earns per unit of any resource, so breaking a limit never pays off (Olsen, 1994). The penalised score is a search score only: infeasible candidates stay in the search and can act as stepping stones, but only feasible ones count as solutions.</p>
 </li>
-<li><p><strong>Greedy repair</strong> (Chu &amp; Beasley, 1998): each model gets a value-for-money ratio $u_j = p_j / \sum_i w_i r_{ij}$ (its utility divided by a weighted sum of the resources it uses). The repair then works in two steps:</p>
+<li><p><strong>Greedy repair</strong> (Chu &amp; Beasley, 1998): unlike a penalty, a repair mechanism changes the candidate itself rather than its fitness score. Each model gets a value-to-weight ratio $u_j = p_j / \sum_i w_i r_{ij}$ (its utility divided by a weighted sum of the resources it uses). The repair then works in two steps:</p>
 <ul>
-<li><strong>DROP:</strong> while the selection is over a limit, remove selected models, lowest ratio first.</li>
-<li><strong>ADD:</strong> then add unselected models, highest ratio first, whenever they fit.</li>
+<li><strong>DROP (greedy repair):</strong> while the selection is infeasible, remove the selected model with the lowest ratio.</li>
+<li><strong>ADD (greedy constructive heuristic):</strong> then add unselected models, highest ratio first, whenever they fit.</li>
 </ul>
-<p>The result is always valid <em>and full</em> (no further model fits), and it replaces the original selection. The weights <em>w</em> are the shadow prices from §0.2. A simpler alternative, <code>w = 1/b</code> (each resource counted as a fraction of its capacity), is compared in §4.1.</p>
+<p>The result is always feasible <em>and full</em> (no further model fits), and it replaces the original selection. The weights <em>w</em> are the shadow prices from §0.2. A simpler alternative, <code>w = 1/b</code> (each resource counted as a fraction of its capacity), is compared in §4.1.</p>
 <p><em>Move-preserving version:</em> <code>prepare(x, keep, ban)</code> never removes the model a move has just added (<code>keep</code>) and never re-adds the one it has just removed (<code>ban</code>). Without this, the repair often undoes the move and the hill climber wastes evaluations on unchanged selections.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fa1c90e7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1061f569">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ConstraintHandler</span><span class="p">:</span>
-    <span class="c1"># Base class: random starting selection, no repair. Subclasses define the fitness score.</span>
+<span class="w">    </span><span class="sd">"""Base class for constraint handling: how to start, what to do before scoring, and how to score."""</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">"base"</span>
-    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span> <span class="bp">self</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">inst</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>  <span class="k">return</span> <span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>   <span class="c1"># each model in with prob. 0.5</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">keep</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ban</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span>                                 <span class="c1"># default: no change</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">fitness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">violation</span><span class="p">):</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">I</span> <span class="o">=</span> <span class="n">inst</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return a random starting selection (each model in with probability 0.5)."""</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">keep</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ban</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Adjust a selection before it is scored. Default: no change."""</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">fitness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">violation</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Return the score the search compares (higher is better). Defined by each subclass."""</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">DeathPenalty</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Infeasible candidates are immediately rejected (fitness -inf)."""</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">"Death penalty"</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Random selection, made feasible by removing random models until everything fits."""</span>
         <span class="n">x</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">initial</span><span class="p">(</span><span class="n">rng</span><span class="p">)</span>
         <span class="k">while</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">R</span> <span class="o">@</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>                 <span class="c1"># remove random models until everything fits</span>
             <span class="n">x</span><span class="p">[</span><span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">x</span><span class="p">))]</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="k">return</span> <span class="n">x</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">fitness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">violation</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">util</span> <span class="k">if</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>             <span class="c1"># over the limit -&gt; worst possible score</span>
+        <span class="k">return</span> <span class="n">util</span> <span class="k">if</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>             <span class="c1"># infeasible -&gt; worst possible score</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">StaticPenalty</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Fitness = utility minus a fine proportional to the total amount over the limits."""</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s2">"Static penalty"</span>
+
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
         <span class="c1"># fine per unit of overflow = highest utility any model earns per unit of any resource</span>
         <span class="n">ratios</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">R</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">,</span> <span class="n">inst</span><span class="o">.</span><span class="n">R</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">lam</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmax</span><span class="p">(</span><span class="n">ratios</span><span class="p">)</span>
+
     <span class="k">def</span><span class="w"> </span><span class="nf">fitness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">violation</span><span class="p">):</span>
         <span class="k">return</span> <span class="n">util</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">lam</span> <span class="o">*</span> <span class="n">violation</span>                     <span class="c1"># utility minus the fine</span>
 
 <span class="k">class</span><span class="w"> </span><span class="nc">GreedyRepair</span><span class="p">(</span><span class="n">ConstraintHandler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Greedy DROP/ADD repair: every selection is turned into a feasible and full one before scoring.</span>
+
+<span class="sd">    weights: one weight per resource, used in the value-to-weight ratio u_j = p_j / sum_i(w_i * r_ij).</span>
+<span class="sd">    """</span>
     <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inst</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">inst</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
         <span class="n">w</span> <span class="o">=</span> <span class="n">weights</span> <span class="o">+</span> <span class="mf">1e-6</span> <span class="o">*</span> <span class="n">weights</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">*</span> <span class="n">inst</span><span class="o">.</span><span class="n">b</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="n">inst</span><span class="o">.</span><span class="n">b</span>      <span class="c1"># tiny weight on every resource (tie-break)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">ratio</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">p</span> <span class="o">/</span> <span class="p">(</span><span class="n">w</span> <span class="o">@</span> <span class="n">inst</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>                               <span class="c1"># value-for-money ratio u_j of each model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ratio</span> <span class="o">=</span> <span class="n">inst</span><span class="o">.</span><span class="n">p</span> <span class="o">/</span> <span class="p">(</span><span class="n">w</span> <span class="o">@</span> <span class="n">inst</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>                               <span class="c1"># value-to-weight ratio u_j of each model</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">drop_order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ratio</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">"stable"</span><span class="p">)</span>          <span class="c1"># worst value first (used by DROP)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_order</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">drop_order</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>                    <span class="c1"># best value first (used by ADD)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">RT</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ascontiguousarray</span><span class="p">(</span><span class="n">inst</span><span class="o">.</span><span class="n">R</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>                         <span class="c1"># row j = resource use of model j (fast access)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">initial</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">initial</span><span class="p">(</span><span class="n">rng</span><span class="p">))</span>              <span class="c1"># random selection, then repaired</span>
+<span class="w">        </span><span class="sd">"""Random selection, then repaired."""</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">initial</span><span class="p">(</span><span class="n">rng</span><span class="p">))</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">prepare</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">keep</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">ban</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">"""Repair selection x and return the repaired copy.</span>
+
+<span class="sd">        DROP removes the worst-value models until every limit holds; ADD then adds the best-value</span>
+<span class="sd">        models that still fit. keep / ban = model the last move added / removed (-1 = none),</span>
+<span class="sd">        so the repair does not undo that move.</span>
+<span class="sd">        """</span>
         <span class="n">x</span><span class="p">,</span> <span class="n">RT</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">RT</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">b</span>
         <span class="n">load</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">I</span><span class="o">.</span><span class="n">R</span> <span class="o">@</span> <span class="n">x</span>                                    <span class="c1"># current use of each resource</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">load</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>                                   <span class="c1"># DROP: remove worst-value models until valid</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">load</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>                                   <span class="c1"># DROP: remove worst-value models until feasible</span>
             <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">drop_order</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="ow">and</span> <span class="n">j</span> <span class="o">!=</span> <span class="n">keep</span><span class="p">:</span>                         <span class="c1"># never remove the model the move just added</span>
                     <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
@@ -8352,18 +8412,22 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
         <span class="k">return</span> <span class="n">x</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">fitness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">util</span><span class="p">,</span> <span class="n">violation</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">util</span> <span class="k">if</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>             <span class="c1"># never -inf in practice: repair output is always valid</span>
+        <span class="k">return</span> <span class="n">util</span> <span class="k">if</span> <span class="n">violation</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span>             <span class="c1"># never -inf in practice: repair output is always feasible</span>
 
-<span class="c1"># Repair with shadow-price weights (used throughout), and the simpler alternative compared in §4.1</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">dual_repair</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>   <span class="k">return</span> <span class="n">GreedyRepair</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="n">duals</span><span class="p">,</span> <span class="s2">"Repair (shadow-price weights)"</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">naive_repair</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>  <span class="k">return</span> <span class="n">GreedyRepair</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="s2">"Repair (capacity-normalised weights)"</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">dual_repair</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Repair weighted by the shadow prices from §0.2 (used throughout)."""</span>
+    <span class="k">return</span> <span class="n">GreedyRepair</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">I</span><span class="o">.</span><span class="n">duals</span><span class="p">,</span> <span class="s2">"Repair (shadow-price weights)"</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">naive_repair</span><span class="p">(</span><span class="n">I</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Repair weighted by 1/capacity: each resource counted as a fraction of its capacity (compared in §4.1)."""</span>
+    <span class="k">return</span> <span class="n">GreedyRepair</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">,</span> <span class="s2">"Repair (capacity-normalised weights)"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=757b7c36">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f61dd01">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8373,7 +8437,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f8ca3b2c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4c997264">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8382,9 +8446,12 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">neighbour</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">p_swap</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
-    <span class="c1"># Hill-climbing move. Returns (new selection, keep, ban) so the repair can preserve the move.</span>
-    <span class="c1">#   flip: switch one random model in or out</span>
-    <span class="c1">#   swap: remove one selected model and add one unselected model (same number of models)</span>
+<span class="w">    </span><span class="sd">"""Make one random hill-climbing move and return (new selection, keep, ban).</span>
+
+<span class="sd">    flip: switch one random model in or out.</span>
+<span class="sd">    swap (probability p_swap): remove one selected model and add one unselected model.</span>
+<span class="sd">    keep / ban tell the repair which model was just added / removed (-1 = none).</span>
+<span class="sd">    """</span>
     <span class="n">y</span><span class="p">,</span> <span class="n">ones</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">p_swap</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">ones</span><span class="o">.</span><span class="n">size</span> <span class="o">&lt;</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">:</span>      <span class="c1"># swap needs at least one model in and one out</span>
         <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">ones</span><span class="p">),</span> <span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">flatnonzero</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
@@ -8395,16 +8462,16 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
     <span class="k">return</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="k">else</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>                  <span class="c1"># added -&gt; keep it; removed -&gt; do not re-add it</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">tournament</span><span class="p">(</span><span class="n">fit</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-    <span class="c1"># Pick k random population members and return the index of the fittest one</span>
+<span class="w">    </span><span class="sd">"""Pick k random population members and return the index of the fittest one."""</span>
     <span class="n">idx</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">fit</span><span class="o">.</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">idx</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">fit</span><span class="p">[</span><span class="n">idx</span><span class="p">])]</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">uniform_crossover</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
-    <span class="c1"># For each model, copy the in/out decision from a random parent (50/50)</span>
+<span class="w">    </span><span class="sd">"""Return a child that copies each model's in/out decision from a random parent (50/50)."""</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">bit_flip</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">pm</span><span class="p">,</span> <span class="n">rng</span><span class="p">):</span>
-    <span class="c1"># Flip each model's in/out decision independently with probability pm</span>
+<span class="w">    </span><span class="sd">"""Return a copy of x with each model's in/out decision flipped independently with probability pm."""</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">^</span> <span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">pm</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -8412,7 +8479,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4f780ca2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f7067dd1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8422,7 +8489,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a60c6aa6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=44bbb3a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8431,10 +8498,16 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hill_climber</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">budget</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">stall</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">p_swap</span><span class="o">=</span><span class="mf">0.5</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""First-improvement, random-mutation hill climber with random restarts (Part 1).</span>
+
+<span class="sd">    Tries one random flip/swap neighbour per evaluation and accepts it if it is at least as good.</span>
+<span class="sd">    Restarts from a new random selection after `stall` evaluations without improvement.</span>
+<span class="sd">    Returns (result summary, evaluator).</span>
+<span class="sd">    """</span>
     <span class="n">ev</span> <span class="o">=</span> <span class="n">Evaluator</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">budget</span><span class="p">)</span>
 
     <span class="k">def</span><span class="w"> </span><span class="nf">start</span><span class="p">():</span>
-        <span class="c1"># new starting selection and its fitness (costs one evaluation)</span>
+<span class="w">        </span><span class="sd">"""New starting selection and its fitness (costs one evaluation)."""</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">handler</span><span class="o">.</span><span class="n">initial</span><span class="p">(</span><span class="n">rng</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">x</span><span class="p">,</span> <span class="n">handler</span><span class="o">.</span><span class="n">fitness</span><span class="p">(</span><span class="o">*</span><span class="n">ev</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
@@ -8453,6 +8526,13 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
     <span class="k">return</span> <span class="p">{</span><span class="o">**</span><span class="n">ev</span><span class="o">.</span><span class="n">result</span><span class="p">(),</span> <span class="s2">"restarts"</span><span class="p">:</span> <span class="n">restarts</span><span class="p">},</span> <span class="n">ev</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">steady_state_ga</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">handler</span><span class="p">,</span> <span class="n">budget</span><span class="p">,</span> <span class="n">rng</span><span class="p">,</span> <span class="n">pop_size</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">pm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Steady-state genetic algorithm (Part 2).</span>
+
+<span class="sd">    Each step: k-tournament selection of two parents -&gt; uniform crossover -&gt; bit-flip mutation</span>
+<span class="sd">    (default pm = 1/n) -&gt; handler.prepare() -&gt; evaluate. The child replaces the worst member if it is</span>
+<span class="sd">    at least as fit; children already in the population are discarded without being evaluated.</span>
+<span class="sd">    Returns (result summary, evaluator, diversity log).</span>
+<span class="sd">    """</span>
     <span class="n">ev</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">Evaluator</span><span class="p">(</span><span class="n">I</span><span class="p">,</span> <span class="n">budget</span><span class="p">),</span> <span class="n">I</span><span class="o">.</span><span class="n">n</span>
     <span class="n">pm</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="n">n</span> <span class="k">if</span> <span class="n">pm</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">pm</span>                      <span class="c1"># default: about one bit flip per child</span>
     <span class="n">pop</span><span class="p">,</span> <span class="n">fit</span><span class="p">,</span> <span class="n">seen</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="nb">set</span><span class="p">()</span>                          <span class="c1"># `seen` holds every current member (as bytes)</span>
@@ -8490,7 +8570,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=40de0f52">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=993675e4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8499,7 +8579,11 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">run_many</span><span class="p">(</span><span class="n">algo</span><span class="p">,</span> <span class="n">I</span><span class="p">,</span> <span class="n">make_handler</span><span class="p">,</span> <span class="n">budget</span><span class="p">,</span> <span class="n">n_runs</span><span class="o">=</span><span class="n">N_RUNS</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-    <span class="c1"># Run an algorithm n_runs times. Run k uses its own generator np.random.default_rng(MASTER_SEED + k).</span>
+<span class="w">    </span><span class="sd">"""Run an algorithm n_runs times with seeds MASTER_SEED + k and collect the results.</span>
+
+<span class="sd">    Returns (one-row-per-run DataFrame, convergence traces as an array, extra outputs such as GA diversity).</span>
+<span class="sd">    Each run's best selection is re-checked against every limit.</span>
+<span class="sd">    """</span>
     <span class="n">rows</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">extras</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_runs</span><span class="p">):</span>
         <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">MASTER_SEED</span> <span class="o">+</span> <span class="n">k</span><span class="p">)</span>
@@ -8516,7 +8600,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">rows</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">traces</span><span class="p">),</span> <span class="n">extras</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">summarise</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="c1"># One row per variant: quality, reliability, validity rate and speed</span>
+<span class="w">    </span><span class="sd">"""Summary table with one row per variant: quality, reliability, validity rate and speed."""</span>
     <span class="n">g</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"variant"</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
         <span class="s2">"mean"</span><span class="p">:</span> <span class="n">g</span><span class="o">.</span><span class="n">best_utility</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s2">"std"</span><span class="p">:</span> <span class="n">g</span><span class="o">.</span><span class="n">best_utility</span><span class="o">.</span><span class="n">std</span><span class="p">(),</span> <span class="s2">"median"</span><span class="p">:</span> <span class="n">g</span><span class="o">.</span><span class="n">best_utility</span><span class="o">.</span><span class="n">median</span><span class="p">(),</span>
@@ -8530,18 +8614,23 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
     <span class="k">return</span> <span class="n">out</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">a12</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="c1"># Vargha-Delaney A12: probability that a random run of A beats a random run of B (ties count half).</span>
-    <span class="c1"># 0.5 = no difference, 1.0 = A always better, 0.0 = B always better.</span>
+<span class="w">    </span><span class="sd">"""Vargha-Delaney A12: probability that a random run of A beats a random run of B (ties count half).</span>
+
+<span class="sd">    0.5 = no difference, 1.0 = A always better, 0.0 = B always better.</span>
+<span class="sd">    """</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">float</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">float</span><span class="p">)[</span><span class="kc">None</span><span class="p">,</span> <span class="p">:]</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">a12_magnitude</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-    <span class="c1"># standard Vargha-Delaney size labels</span>
+<span class="w">    </span><span class="sd">"""Standard Vargha-Delaney label for an A12 value: negligible, small, medium or large."""</span>
     <span class="n">d</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span>
     <span class="k">return</span> <span class="s2">"negligible"</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mf">0.06</span> <span class="k">else</span> <span class="s2">"small"</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mf">0.14</span> <span class="k">else</span> <span class="s2">"medium"</span> <span class="k">if</span> <span class="n">d</span> <span class="o">&lt;</span> <span class="mf">0.21</span> <span class="k">else</span> <span class="s2">"large"</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">compare</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">alternative</span><span class="p">):</span>
-    <span class="c1"># Mann-Whitney U test + A12 effect size. alternative: "greater", "less" or "two-sided".</span>
+<span class="w">    </span><span class="sd">"""Mann-Whitney U test plus A12 effect size for two samples of run results.</span>
+
+<span class="sd">    alternative: "greater", "less" or "two-sided". Returns a dict with medians, U, p, A12 and its label.</span>
+<span class="sd">    """</span>
     <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">float</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">]))</span><span class="o">.</span><span class="n">size</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">U</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">size</span> <span class="o">*</span> <span class="n">b</span><span class="o">.</span><span class="n">size</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">1.0</span>                    <span class="c1"># all values identical: no evidence of any difference</span>
@@ -8552,7 +8641,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
             <span class="s2">"A12"</span><span class="p">:</span> <span class="n">A</span><span class="p">,</span> <span class="s2">"effect"</span><span class="p">:</span> <span class="n">a12_magnitude</span><span class="p">(</span><span class="n">A</span><span class="p">)}</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">holm</span><span class="p">(</span><span class="n">pvals</span><span class="p">):</span>
-    <span class="c1"># Holm-Bonferroni correction: adjusts p-values when several tests are run on the same data</span>
+<span class="w">    </span><span class="sd">"""Holm-Bonferroni correction: return adjusted p-values when several tests are run on the same data."""</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">pvals</span><span class="p">);</span> <span class="n">order</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">p</span><span class="p">);</span> <span class="n">adj</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
     <span class="n">running</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">rank</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">order</span><span class="p">):</span>                        <span class="c1"># smallest p first, multiplied by (tests left)</span>
@@ -8563,7 +8652,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6eb85d2c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e62c2860">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8572,8 +8661,11 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">plot_convergence</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">traces</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">optimum</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">logx</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="c1"># One line per variant: median best-so-far utility over the runs, with a shaded band</span>
-    <span class="c1"># from the 25th to the 75th percentile (the middle half of the runs)</span>
+<span class="w">    </span><span class="sd">"""Plot one line per variant: median best-so-far utility over the runs.</span>
+
+<span class="sd">    The shaded band runs from the 25th to the 75th percentile (the middle half of the runs);</span>
+<span class="sd">    the dashed line marks the true optimum.</span>
+<span class="sd">    """</span>
     <span class="k">for</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">T</span><span class="p">),</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">traces</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">colors</span><span class="p">):</span>
         <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
         <span class="n">q1</span><span class="p">,</span> <span class="n">med</span><span class="p">,</span> <span class="n">q3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -8589,7 +8681,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
     <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">"lower right"</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 
 <span class="k">def</span><span class="w"> </span><span class="nf">plot_box</span><span class="p">(</span><span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">colors</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"best utility at end of budget"</span><span class="p">,</span> <span class="n">optimum</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="c1"># Boxplot per variant (line = median, diamond = mean), with every individual run shown as a dot</span>
+<span class="w">    </span><span class="sd">"""Boxplot per variant (line = median, diamond = mean), with every individual run shown as a dot."""</span>
     <span class="n">names</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">bp</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">boxplot</span><span class="p">([</span><span class="n">data</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">names</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">patch_artist</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                     <span class="n">medianprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">C</span><span class="p">[</span><span class="s2">"ink"</span><span class="p">],</span> <span class="n">lw</span><span class="o">=</span><span class="mf">1.5</span><span class="p">),</span> <span class="n">showmeans</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
@@ -8609,7 +8701,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fdeda47b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=930bd49b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8617,7 +8709,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="1.4-Correctness-checks">1.4 Correctness checks<a class="anchor-link" href="#1.4-Correctness-checks">¶</a></h3><p>The results only mean something if the building blocks are correct, so these checks run before any experiment:</p>
 <ol>
-<li>The repair output is <strong>always valid and full</strong> (10,000 random selections per instance, for both weightings).</li>
+<li>The repair output is <strong>always feasible and full</strong> (10,000 random selections per instance, for both weightings).</li>
 <li>The <code>Evaluator</code> refuses to go over its budget.</li>
 <li>The exact solver is checked against <strong>brute force</strong> (trying all 2²⁰ ≈ 1 million selections) on a 20-model test problem.</li>
 <li>Our shadow prices (§0.2) are checked against the values from SciPy's LP solver. This is a check only; the algorithms use our own values.</li>
@@ -8625,7 +8717,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4dcae785">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=14aa859b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8633,14 +8725,14 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Repair: random selections of random density must come out valid and full</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># 1. Repair: random selections of random density must come out feasible and full</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="n">MASTER_SEED</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="p">(</span><span class="n">I1</span><span class="p">,</span> <span class="n">I2</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">H</span> <span class="ow">in</span> <span class="p">(</span><span class="n">dual_repair</span><span class="p">(</span><span class="n">I</span><span class="p">),</span> <span class="n">naive_repair</span><span class="p">(</span><span class="n">I</span><span class="p">)):</span>
         <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10_000</span><span class="p">):</span>
             <span class="n">x</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">prepare</span><span class="p">((</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">n</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">())</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">))</span>
             <span class="n">load</span> <span class="o">=</span> <span class="n">I</span><span class="o">.</span><span class="n">R</span> <span class="o">@</span> <span class="n">x</span>
-            <span class="k">assert</span> <span class="p">(</span><span class="n">load</span> <span class="o">&lt;=</span> <span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>                                            <span class="c1"># valid: no limit exceeded</span>
+            <span class="k">assert</span> <span class="p">(</span><span class="n">load</span> <span class="o">&lt;=</span> <span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>                                            <span class="c1"># feasible: no limit exceeded</span>
             <span class="k">assert</span> <span class="ow">not</span> <span class="p">((</span><span class="n">I</span><span class="o">.</span><span class="n">R</span><span class="p">[:,</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span> <span class="n">load</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>   <span class="c1"># full: no unselected model fits</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">"1. repair: 40,000 random vectors -&gt; all feasible and maximal"</span><span class="p">)</span>
 
@@ -8654,7 +8746,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <span class="c1"># 3. Exact solver vs brute force on the first 20 models of Instance 1 (tighter capacities)</span>
 <span class="n">sub</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">);</span> <span class="n">p</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">I1</span><span class="o">.</span><span class="n">p</span><span class="p">[</span><span class="n">sub</span><span class="p">],</span> <span class="n">I1</span><span class="o">.</span><span class="n">R</span><span class="p">[:,</span> <span class="n">sub</span><span class="p">],</span> <span class="n">I1</span><span class="o">.</span><span class="n">b</span> <span class="o">*</span> <span class="mf">0.6</span>
 <span class="n">X</span> <span class="o">=</span> <span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">20</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">)</span>     <span class="c1"># every 0/1 combination</span>
-<span class="n">brute</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">@</span> <span class="n">p</span><span class="p">)[((</span><span class="n">X</span> <span class="o">@</span> <span class="n">R</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>                              <span class="c1"># best valid one</span>
+<span class="n">brute</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">@</span> <span class="n">p</span><span class="p">)[((</span><span class="n">X</span> <span class="o">@</span> <span class="n">R</span><span class="o">.</span><span class="n">T</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">1</span><span class="p">)]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>                              <span class="c1"># best feasible one</span>
 <span class="n">exact</span> <span class="o">=</span> <span class="o">-</span><span class="n">milp</span><span class="p">(</span><span class="o">-</span><span class="n">p</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">LinearConstraint</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="n">b</span><span class="p">),</span> <span class="n">integrality</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="n">bounds</span><span class="o">=</span><span class="n">Bounds</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">fun</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"3. exhaustive search = </span><span class="si">{</span><span class="n">brute</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2">, MILP = </span><span class="si">{</span><span class="n">exact</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> -&gt; </span><span class="si">{</span><span class="s1">'match'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">brute</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">exact</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">'MISMATCH'</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
 <span class="k">del</span> <span class="n">X</span>
@@ -8695,14 +8787,15 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e0493e40">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bac1e23d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Part-1:-Baseline-discrete-local-search-(Instance-1,-n-=-28,-m-=-2)">Part 1: Baseline discrete local search (Instance 1, n = 28, m = 2)<a class="anchor-link" href="#Part-1:-Baseline-discrete-local-search-(Instance-1,-n-=-28,-m-=-2)">¶</a></h2><h3 id="P1.1-Design-choices">P1.1 Design choices<a class="anchor-link" href="#P1.1-Design-choices">¶</a></h3><table>
+<h2 id="Part-1:-Baseline-discrete-local-search-(Instance-1,-n-=-28,-m-=-2)">Part 1: Baseline discrete local search (Instance 1, n = 28, m = 2)<a class="anchor-link" href="#Part-1:-Baseline-discrete-local-search-(Instance-1,-n-=-28,-m-=-2)">¶</a></h2><h3 id="P1.1-Design-choices">P1.1 Design choices<a class="anchor-link" href="#P1.1-Design-choices">¶</a></h3><p>The baseline is a <strong>first-improvement, random-mutation hill climber</strong> combined with <strong>random-restart hill climbing</strong>.</p>
+<table>
 <thead>
 <tr>
 <th>Element</th>
@@ -8719,22 +8812,22 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <tr>
 <td>Starting point</td>
 <td>random bits (each model in with probability 0.5), then the handler's own start rule</td>
-<td>unbiased start; each handler decides how to make it valid</td>
+<td>unbiased start; each handler decides how to make it feasible</td>
 </tr>
 <tr>
-<td>Move (mutation)</td>
-<td><strong>flip</strong> (prob. 0.5) or <strong>swap</strong> 1-out/1-in (prob. 0.5)</td>
+<td>Neighbourhood (mutation)</td>
+<td>add or remove one model (<strong>flip</strong>, prob. 0.5), or <strong>swap</strong> one selected model for one unselected model (prob. 0.5)</td>
 <td>A good selection is nearly full on both resources (the optimum uses 495/500 and 499/500). From there, adding a model breaks a limit and removing one loses utility, so a <em>flip-only</em> climber gets stuck quickly. A <strong>swap</strong> exchanges models at roughly the same resource use, which is the move that can still improve a full selection</td>
 </tr>
 <tr>
 <td>Acceptance</td>
-<td>accept the first neighbour that is at least as good</td>
-<td>one neighbour per evaluation (cheap); sideways moves let it cross flat regions</td>
+<td>first improvement: try one random neighbour per evaluation and accept it if it is at least as good</td>
+<td>cheap, and accepting equal moves lets it cross plateaus (flat regions)</td>
 </tr>
 <tr>
 <td>Escape</td>
 <td>random restart after 300 evaluations without improvement</td>
-<td>otherwise the climber stays stuck at the first local optimum</td>
+<td>otherwise the climber stays stuck at the first local optimum; restarts add exploration while the best-so-far solution is kept</td>
 </tr>
 <tr>
 <td>Budget</td>
@@ -8747,7 +8840,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7b706382">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3f76d716">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8832,8 +8925,8 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <td>0.0</td>
 <td>NaN</td>
 <td>45.93</td>
-<td>0.22</td>
-<td>72.35</td>
+<td>0.23</td>
+<td>77.91</td>
 </tr>
 <tr>
 <th>Static penalty</th>
@@ -8847,7 +8940,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <td>NaN</td>
 <td>44.82</td>
 <td>0.22</td>
-<td>73.82</td>
+<td>72.35</td>
 </tr>
 <tr>
 <th>Repair (shadow-price weights)</th>
@@ -8861,7 +8954,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 <td>56.0</td>
 <td>100.00</td>
 <td>0.54</td>
-<td>181.14</td>
+<td>179.41</td>
 </tr>
 </tbody>
 </table>
@@ -8870,7 +8963,7 @@ Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagran
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a6333d56">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=740d72f3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8921,7 +9014,7 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=30d96b95">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0d2adce6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8929,8 +9022,8 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="P1.2-Discussion">P1.2 Discussion<a class="anchor-link" href="#P1.2-Discussion">¶</a></h3><ul>
 <li><strong>Constraint handling matters more than the search moves.</strong> With the same moves, acceptance rule and budget, the repair-based climber finds the true optimum (130,883) in <strong>all 30 runs</strong>, usually within a few dozen evaluations. The death-penalty and static-penalty climbers <strong>never</strong> reach it, and their results vary widely between runs (see table and boxplot). Both differences are significant (Mann–Whitney p ≪ 0.001, A12 = 1.0).</li>
-<li><strong>Why the penalty climbers fail.</strong> About half of their moves produce an over-limit selection, which is either rejected outright (death penalty) or heavily fined (static penalty), see "feasible cand. %". Near the limits, the only moves left are removing a model or swapping two models with very similar resource use, so these climbers get stuck often. Restarts help, but 3,000 evaluations are not enough.</li>
-<li><strong>Why repair works.</strong> Every repaired selection is valid <em>and full</em>: the ADD step fills any spare capacity with the best-value models, so each evaluation tests a complete, sensible selection. A flip effectively becomes "force model j in, then rebuild the rest", a much bigger and better-informed step. The <code>keep</code>/<code>ban</code> rule makes sure this step never just returns the current selection.</li>
+<li><strong>Why the penalty climbers fail.</strong> About half of their moves produce an infeasible selection ("feasible cand. %" column in the results table above), which is either rejected outright (death penalty) or heavily penalised (static penalty). Near the limits, the only moves left are removing a model or swapping two models with very similar resource use, so these climbers get stuck often. Restarts help, but 3,000 evaluations are not enough.</li>
+<li><strong>Why repair works.</strong> Every repaired selection is feasible <em>and full</em>: the ADD step fills any spare capacity with the best-value models, so each evaluation tests a complete, sensible selection. A flip effectively becomes "force model j in, then rebuild the rest", a much bigger and better-informed step. The <code>keep</code>/<code>ban</code> rule makes sure this step never just returns the current selection.</li>
 <li><strong>Cost.</strong> Repair costs extra computing time per evaluation (≈ 2.5× more µs/eval, see table). On this instance that does not matter, since a whole run takes well under a second.</li>
 </ul>
 <p><strong>Decision:</strong> repair is used as the constraint-handling strategy for Part 2. Part 3 tests whether its advantage over a penalty also holds on the larger instance, and at what cost.</p>
@@ -8938,7 +9031,7 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7c28cddb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0e97e989">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8956,7 +9049,7 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 <tr>
 <th>Component</th>
 <th>Choice</th>
-<th>Why (and why not the alternatives)</th>
+<th>Why</th>
 </tr>
 </thead>
 <tbody>
@@ -8967,8 +9060,8 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </tr>
 <tr>
 <td>Selection</td>
-<td>binary tournament</td>
-<td>mild, constant selection pressure (keeps diversity) and cheap. It only compares which of two is better, so it does not depend on the size of the fitness values. Roulette-wheel selection would be nearly random here, because all utilities are around 11,000 and differ only slightly</td>
+<td>binary tournament (k = 2)</td>
+<td>mild, constant selection pressure that balances exploration and exploitation, and cheap. It only compares which of two is better, so it does not depend on the size of the fitness values. Roulette-wheel selection would be nearly random here, because all utilities are around 11,000 and differ only slightly</td>
 </tr>
 <tr>
 <td>Crossover</td>
@@ -8978,12 +9071,12 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 <tr>
 <td>Mutation</td>
 <td>bit-flip, pₘ = 1/n (about 1 flip per child)</td>
-<td>a small change to what the child inherited. The repair then rebalances it, so the actual change is larger, without destroying what was inherited</td>
+<td>adds variation and helps escape local optima, while keeping most of what the child inherited. The repair then rebalances it, so the actual change is larger, without destroying what was inherited</td>
 </tr>
 <tr>
 <td>Constraint handling</td>
 <td><strong>greedy DROP/ADD repair with shadow-price weights</strong></td>
-<td>Part 1 showed repair clearly beats the penalty approaches. Every evaluated child is valid and full, so no evaluations are wasted on over-limit selections. The shadow prices (§0.2) say how scarce each resource is. Only resource 2 has a positive price, so the ratio $p_j / \lambda_2 r_{2j}$ ranks models by utility per unit of the resource that actually runs out</td>
+<td>Part 1 showed repair clearly beats the penalty approaches. Every evaluated child is feasible and full, so no evaluations are wasted on infeasible selections. The shadow prices from §0.2 showed that only resource 2 is scarce (the only positive price), so the ratio $p_j / \lambda_2 r_{2j}$ ranks models by utility per unit of the resource that actually runs out</td>
 </tr>
 <tr>
 <td>Diversity</td>
@@ -8992,11 +9085,11 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </tr>
 </tbody>
 </table>
-<p><strong>Cost per child:</strong> crossover and mutation take time proportional to n, and repair and evaluation proportional to n·m. The ratio order is computed once per run.</p>
+<p><strong>Cost per child:</strong> crossover and mutation take time proportional to n (the number of models). Repair and evaluation take time proportional to n × m (models × resources). The ratio order used by the repair is computed only once per run.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3451e105">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b360966b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9078,8 +9171,8 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 <td>100.0</td>
 <td>340.0</td>
 <td>100.0</td>
-<td>4.16</td>
-<td>832.14</td>
+<td>4.15</td>
+<td>829.37</td>
 <td>16449.5</td>
 </tr>
 </tbody>
@@ -9089,7 +9182,7 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e784c705">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9290690e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9125,7 +9218,7 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0d4349be">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9d06daf1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9244,7 +9337,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=29b48afe">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cd96d3dd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9261,7 +9354,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a7369aae">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=844e6200">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9271,22 +9364,22 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <h2 id="Part-3:-Empirical-study-and-hypothesis-testing-(Instance-2)">Part 3: Empirical study and hypothesis testing (Instance 2)<a class="anchor-link" href="#Part-3:-Empirical-study-and-hypothesis-testing-(Instance-2)">¶</a></h2><h3 id="P3.1-Research-question-and-hypothesis">P3.1 Research question and hypothesis<a class="anchor-link" href="#P3.1-Research-question-and-hypothesis">¶</a></h3><p>Part 1 showed that repair beats penalties on the small instance. Here we test whether that holds on the challenge instance inside the GA, and at what cost. The two variants differ <strong>only</strong> in how they handle constraints:</p>
 <ul>
 <li><strong>Variant A, repair:</strong> every child is repaired with the shadow-price repair (the Part 2 GA).</li>
-<li><strong>Variant B, static penalty:</strong> children are not repaired. Over-limit children get the fine from §1.1.</li>
+<li><strong>Variant B, static penalty:</strong> children are not repaired. Infeasible children get the static penalty from §1.1.</li>
 </ul>
 <p><strong>Hypothesis H1.</strong> <em>The repair GA reaches a higher final utility than the penalty GA under the same evaluation budget.</em></p>
-<p><strong>Why we expect this.</strong> The optimum sits exactly on the limit of resource 2 (100 % used). A penalty GA can only reach that limit through selection: part of its budget goes on over-limit children that can never count as a solution, and uniform crossover of two parents near the limit often produces an over-limit child. Repair turns every child into a full, valid selection, so every evaluation is a usable candidate.</p>
+<p><strong>Why we expect this.</strong> The optimum sits exactly on the limit of resource 2 (100 % used). A penalty GA can only reach that limit through selection: part of its budget goes on infeasible children that can never count as a solution, and uniform crossover of two parents near the limit often produces an infeasible child. Repair turns every child into a full, feasible selection, so every evaluation is a usable candidate.</p>
 <p><strong>Possible counter-argument.</strong> The penalty GA is much cheaper per evaluation, because it skips the repair. With equal <em>computing time</em> rather than equal evaluations, it might catch up. §P3.4 tests this directly.</p>
 <p>H0: both variants have the same distribution of final utility. H1 (one-sided): repair &gt; penalty.</p>
 <h3 id="P3.2-Protocol">P3.2 Protocol<a class="anchor-link" href="#P3.2-Protocol">¶</a></h3><ul>
 <li><strong>Equal budget:</strong> 5,000 fitness evaluations per run, counted by the shared <code>Evaluator</code>, so neither variant can evaluate more.</li>
 <li><strong>M = 30 independent runs per variant.</strong> Run <em>k</em> of each variant uses seed 42 + k. The two variants make different random choices from the first step onwards, so the two sets of runs are treated as <strong>independent samples</strong>.</li>
 <li><strong>Only the constraint handling changes.</strong> Everything else stays fixed: steady-state GA, μ = 100, binary tournament, uniform crossover, pₘ = 1/n, duplicate rejection.</li>
-<li><strong>Statistics:</strong> one-sided <strong>Mann–Whitney U</strong> test at α = 0.05. It is non-parametric, so it does not assume normally distributed results, which matters here because many runs end exactly at the optimum. It is reported with the <strong>Vargha–Delaney A12</strong> effect size (the chance that a random run of one variant beats a random run of the other), as recommended for randomised algorithms by Arcuri &amp; Briand (2011).</li>
+<li><strong>Statistics:</strong> one-sided <strong>Mann–Whitney U</strong> test at α = 0.05. It is non-parametric, so it does not assume normally distributed results, which matters here because many runs end exactly at the optimum. The Wilcoxon signed-rank test is meant for paired samples; our runs are independent, so the Mann–Whitney U test is the appropriate choice. It is reported with the <strong>Vargha–Delaney A12</strong> effect size (the chance that a random run of one variant beats a random run of the other), as recommended for randomised algorithms by Arcuri &amp; Briand (2011).</li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=50a089a1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=60e21e66">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9371,8 +9464,8 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <td>100.0</td>
 <td>340.0</td>
 <td>100.00</td>
-<td>4.16</td>
-<td>832.14</td>
+<td>4.15</td>
+<td>829.37</td>
 <td>16449.5</td>
 </tr>
 <tr>
@@ -9387,7 +9480,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <td>NaN</td>
 <td>58.73</td>
 <td>0.54</td>
-<td>108.95</td>
+<td>107.42</td>
 <td>196.3</td>
 </tr>
 </tbody>
@@ -9398,7 +9491,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d5dd95d8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bc467792">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9408,7 +9501,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c85a7eb4">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=17d9f865">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9416,7 +9509,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Convergence (left), final utility (middle), share of evaluated candidates that were valid (right)</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Convergence (left), final utility (middle), share of evaluated candidates that were feasible (right)</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mf">4.3</span><span class="p">),</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="p">{</span><span class="s2">"width_ratios"</span><span class="p">:</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">]})</span>
 <span class="n">plot_convergence</span><span class="p">(</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">{</span><span class="s2">"Repair (shadow prices)"</span><span class="p">:</span> <span class="n">A_rep_tr</span><span class="p">,</span> <span class="s2">"Static penalty"</span><span class="p">:</span> <span class="n">A_pen_tr</span><span class="p">},</span>
                  <span class="p">[</span><span class="n">C</span><span class="p">[</span><span class="s2">"blue"</span><span class="p">],</span> <span class="n">C</span><span class="p">[</span><span class="s2">"orange"</span><span class="p">]],</span> <span class="n">I2</span><span class="o">.</span><span class="n">optimum</span><span class="p">,</span> <span class="s2">"H1: convergence, equal budget 5,000 evals (M=30)"</span><span class="p">,</span>
@@ -9453,25 +9546,25 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>H1  Repair vs Penalty: median 11,191 vs 11,157;  U=900, p=6.01e-13, A12=1.00 (large)  -&gt;  reject H0 at alpha=0.05
-CPU cost per evaluation: repair 832 µs, penalty 109 µs  -&gt;  ratio 7.6x
+CPU cost per evaluation: repair 829 µs, penalty 107 µs  -&gt;  ratio 7.7x
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1bdc1823">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c8dbf59d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>H1 is supported.</strong> With the same budget of 5,000 evaluations, the repair GA reaches the optimum in every run. The penalty GA never reaches it, and ends lower and with more spread. The difference is large and highly significant (A12 = 1.0). The right-hand panel shows why: about 41 % of the penalty GA's evaluations are spent on over-limit children, which can never count as a solution and only influence selection. Every repair evaluation is a valid, full selection.</p>
+<p><strong>H1 is supported.</strong> With the same budget of 5,000 evaluations, the repair GA reaches the optimum in every run. The penalty GA never reaches it, and ends lower and with more spread. The difference is large and highly significant (A12 = 1.0). The right-hand panel shows why: about 41 % of the penalty GA's evaluations are spent on infeasible children, which can never count as a solution and only influence selection. Every repair evaluation is a feasible, full selection.</p>
 <h3 id="P3.4-Equal-computing-time">P3.4 Equal computing time<a class="anchor-link" href="#P3.4-Equal-computing-time">¶</a></h3><p>Equal evaluation budgets are the standard way to compare fairly, but repair does extra work inside <code>prepare()</code> that the evaluation count does not show. To check whether H1 only holds because we count evaluations rather than time, the penalty GA is run again with a budget that gives it roughly the <strong>same total computing time</strong> as the repair GA. The budget is fixed at <strong>37,500 evaluations</strong> (5,000 × 7.5), because the cost ratio measured on the development machine was 7.5× (the cell above prints the ratio on the current machine). A fixed number keeps the result reproducible.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b6391fe5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=21ecbb9f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9555,8 +9648,8 @@ CPU cost per evaluation: repair 832 µs, penalty 109 µs  -&gt;  ratio 7.6x
 <td>100.00</td>
 <td>340.0</td>
 <td>100.00</td>
-<td>4.16</td>
-<td>832.14</td>
+<td>4.15</td>
+<td>829.37</td>
 <td>16449.50</td>
 </tr>
 <tr>
@@ -9570,8 +9663,8 @@ CPU cost per evaluation: repair 832 µs, penalty 109 µs  -&gt;  ratio 7.6x
 <td>96.67</td>
 <td>10124.0</td>
 <td>46.94</td>
-<td>4.19</td>
-<td>111.66</td>
+<td>3.95</td>
+<td>105.24</td>
 <td>3032.13</td>
 </tr>
 </tbody>
@@ -9589,7 +9682,7 @@ CPU cost per evaluation: repair 832 µs, penalty 109 µs  -&gt;  ratio 7.6x
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=74af8551">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=02d7fd04">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9618,8 +9711,8 @@ CPU cost per evaluation: repair 832 µs, penalty 109 µs  -&gt;  ratio 7.6x
 </tr>
 <tr>
 <td>Constraint enforcement</td>
-<td>100 % of evaluated candidates valid, guaranteed by the repair</td>
-<td>~41 % (5k) to 53 % (37.5k) of evaluations over the limit. Final validity depends on choosing the fine λ well</td>
+<td>100 % of evaluated candidates feasible, guaranteed by the repair</td>
+<td>~41 % (5k) to 53 % (37.5k) of evaluations infeasible. Final feasibility depends on choosing the fine λ well</td>
 </tr>
 <tr>
 <td>Computing time per evaluation</td>
@@ -9634,7 +9727,7 @@ CPU cost per evaluation: repair 832 µs, penalty 109 µs  -&gt;  ratio 7.6x
 <tr>
 <td>What can go wrong</td>
 <td>a poor ranking slows it down (§4.1)</td>
-<td>λ too small → over-limit selections score best; λ too large → the search avoids the limit and misses the optimum</td>
+<td>λ too small → infeasible selections score best; λ too large → the search avoids the limit and misses the optimum</td>
 </tr>
 </tbody>
 </table>
@@ -9642,7 +9735,7 @@ CPU cost per evaluation: repair 832 µs, penalty 109 µs  -&gt;  ratio 7.6x
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cfd7b7d6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f4033ac7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9665,7 +9758,7 @@ CPU cost per evaluation: repair 832 µs, penalty 109 µs  -&gt;  ratio 7.6x
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7790fe62">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=778d76b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9764,8 +9857,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100.0</td>
 <td>340.0</td>
 <td>100.0</td>
-<td>4.16</td>
-<td>832.14</td>
+<td>4.15</td>
+<td>829.37</td>
 <td>16449.50</td>
 </tr>
 <tr>
@@ -9779,8 +9872,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100.0</td>
 <td>659.0</td>
 <td>100.0</td>
-<td>2.50</td>
-<td>499.21</td>
+<td>2.27</td>
+<td>453.26</td>
 <td>5784.57</td>
 </tr>
 </tbody>
@@ -9790,7 +9883,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e79d0651">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=299eb558">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9944,7 +10037,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f28064f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aeff78d9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9957,7 +10050,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d8dad76b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0669a8ee">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9972,7 +10065,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=52cc99fc">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6f05d586">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10058,8 +10151,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100.0</td>
 <td>340.0</td>
 <td>100.0</td>
-<td>4.16</td>
-<td>832.14</td>
+<td>4.15</td>
+<td>829.37</td>
 <td>16449.5</td>
 </tr>
 <tr>
@@ -10073,8 +10166,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100.0</td>
 <td>293.5</td>
 <td>100.0</td>
-<td>1.06</td>
-<td>211.15</td>
+<td>1.01</td>
+<td>201.60</td>
 <td>NaN</td>
 </tr>
 </tbody>
@@ -10091,7 +10184,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dd13a5d0">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6b6f26e0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10187,7 +10280,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>11191.0</td>
 <td>100.0</td>
 <td>659.0</td>
-<td>1.40</td>
+<td>1.49</td>
 </tr>
 <tr>
 <th>HC</th>
@@ -10196,7 +10289,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>11160.0</td>
 <td>30.0</td>
 <td>1212.0</td>
-<td>0.58</td>
+<td>0.65</td>
 </tr>
 </tbody>
 </table>
@@ -10257,7 +10350,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>7168.0</td>
 <td>100.0</td>
 <td>171.0</td>
-<td>2.99</td>
+<td>3.36</td>
 </tr>
 <tr>
 <th>HC</th>
@@ -10266,7 +10359,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>7146.0</td>
 <td>40.0</td>
 <td>1505.0</td>
-<td>0.82</td>
+<td>0.88</td>
 </tr>
 </tbody>
 </table>
@@ -10275,7 +10368,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8e8793ab">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ff163ce4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10310,7 +10403,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc48ed79">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ac2686de">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10327,7 +10420,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f4775500">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=59b7213d">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10344,7 +10437,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <ul>
 <li><em>Generalisation:</em> there is only one challenge instance, and it has a single scarce resource. On instances where several resources are scarce, the shadow prices spread across resources and the H2 advantage should shrink. Testing that would need more instances with tighter constraints (e.g. the OR-Library <em>mknapcb</em> set).</li>
 <li><em>What the evaluation count measures:</em> it ignores the cost of repair, which is why §P3.4 adds a computing-time check. Absolute times depend on the machine; the relative ranking is what matters.</li>
-<li><em>Settings:</em> the penalty weight λ was chosen by a rule rather than tuned. An adaptive penalty (Hadj-Alouane &amp; Bean, 1997) was tried during development but never kicked in, because the best member stayed valid. Uniform crossover, pₘ = 1/n and μ = 100 were not tuned separately for each variant. Both variants share them, so the comparison is fair, but other settings could change the effect sizes.</li>
+<li><em>Settings:</em> the penalty weight λ was chosen by a rule rather than tuned. An adaptive penalty (Hadj-Alouane &amp; Bean, 1997) was tried during development but never kicked in, because the best member stayed feasible. Uniform crossover, pₘ = 1/n and μ = 100 were not tuned separately for each variant. Both variants share them, so the comparison is fair, but other settings could change the effect sizes.</li>
 <li><em>Statistics:</em> 30 runs per variant, non-parametric tests, effect sizes, and Holm correction where several tests share the same runs.</li>
 </ul>
 <h2 id="6.-References">6. References<a class="anchor-link" href="#6.-References">¶</a></h2><ul>
