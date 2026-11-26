@@ -9747,11 +9747,11 @@ CPU cost per evaluation: repair 768 µs, penalty 103 µs  -&gt;  ratio 7.5x
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>With equal computing time, H1 is not supported.</strong> Given 37,500 evaluations (about the same total time, see the "Time per run (s)" column), the penalty GA reaches the optimum in 29/30 runs, and the difference from repair is no longer significant (p ≈ 0.17, A12 ≈ 0.52, negligible).</p>
-<h3 id="P3.5-Discussion:-quality,-constraint-enforcement-and-time">P3.5 Discussion: quality, constraint enforcement and time<a class="anchor-link" href="#P3.5-Discussion:-quality,-constraint-enforcement-and-time">¶</a></h3><p>The advantage of repair is that it gets more out of <strong>each evaluation</strong>. If evaluations were expensive (for example, testing each model selection on real hardware), repair would clearly be the better choice. With a cheap objective like this one, a penalty GA given enough time gets there too.</p>
+<h3 id="P3.5-Discussion:-quality,-constraint-enforcement-and-time">P3.5 Discussion: quality, constraint enforcement and time<a class="anchor-link" href="#P3.5-Discussion:-quality,-constraint-enforcement-and-time">¶</a></h3><p>The advantage of repair is that it gets more out of <strong>each evaluation</strong>. It needs far fewer evaluations to reach the optimum, but each one costs more computing time. Whether needing fewer evaluations or having cheaper evaluations matters more depends on what one evaluation costs. If evaluations were expensive, repair would clearly be the better choice. For example, if each model selection had to be deployed and tested on real hardware, even one second per evaluation would be far more than the repair's extra work of under 1 ms, making it negligible. With a cheap objective like this one (about 0.1 ms per evaluation), the repair's extra work is large by comparison, and a penalty GA given enough time gets there too.</p>
 <p>Two details keep this conclusion fair to repair:</p>
 <ul>
 <li><strong>Most of the 7.5× extra time comes from duplicates, not from the repair itself.</strong> After it has found the optimum (median 340 evaluations), the repair GA keeps producing children that the repair turns back into existing population members, and 16,450 are discarded per run ("Duplicates skipped per run" column). In the Part 1 hill climber, which has no duplicate check, repair costs only ≈ 2.5× a plain evaluation. Stopping once the population has converged, or mutating duplicates more strongly, would remove most of this overhead.</li>
-<li><strong>Repair still reaches the optimum sooner in real time.</strong> A typical repair run finds the optimum after a median of 340 evaluations, which takes at most about 0.3 seconds. The penalty GA needs a median of 10,124 evaluations, roughly 1 second (times from the "Time per eval (µs)" column above).</li>
+<li><strong>Repair still reaches the optimum sooner in real time.</strong> A typical repair run finds the optimum after a median of 340 evaluations, which takes at most about 0.3 seconds. The penalty GA needs a median of 10,124 evaluations, roughly 1 second (calculated from the "Time per eval (µs)" column above).</li>
 </ul>
 <table>
 <thead>
@@ -9768,23 +9768,33 @@ CPU cost per evaluation: repair 768 µs, penalty 103 µs  -&gt;  ratio 7.5x
 <td>optimum in 0/30 runs at 5k evals, 29/30 at 37.5k (≈ equal time)</td>
 </tr>
 <tr>
+<td>Evaluations to reach the optimum (median)</td>
+<td>340</td>
+<td>never within 5k evals; 10,124 with 37.5k (about 30× more)</td>
+</tr>
+<tr>
+<td>Time to reach the optimum</td>
+<td>at most about 0.3 s</td>
+<td>roughly 1 s</td>
+</tr>
+<tr>
 <td>Constraint enforcement</td>
 <td>100 % of evaluated candidates feasible, guaranteed by the repair</td>
-<td>41.3 % (5k) and 53.1 % (37.5k) of evaluations infeasible (100 % minus "Feasible candidates (%)"). Final feasibility depends on choosing the penalty weight λ well</td>
+<td>41.3 % (for 5k) and 53.1 % (for 37.5k) of evaluations infeasible (100 % minus "Feasible candidates (%)"). Final feasibility depends on choosing the penalty weight λ well</td>
 </tr>
 <tr>
 <td>Computing time per evaluation</td>
-<td>high: the repair itself, plus duplicates after convergence</td>
-<td>low (one matrix–vector product)</td>
+<td>high (≈ 7.5× the penalty GA)</td>
+<td>low: one matrix–vector product</td>
 </tr>
 <tr>
-<td>Problem knowledge needed</td>
-<td>a ranking of the models (shadow prices, §0.2)</td>
-<td>only the penalty weight λ</td>
+<td>What must be set up</td>
+<td>a ranking of the models for the repair (shadow prices, §0.2)</td>
+<td>only one number, the penalty weight λ</td>
 </tr>
 <tr>
 <td>What can go wrong</td>
-<td>a poor ranking slows it down (§4.1)</td>
+<td>with less suitable ranking weights (e.g. capacity-normalised), it needs about twice as many evaluations (§4.1)</td>
 <td>λ too small → infeasible selections score best; λ too large → the search avoids the limit and misses the optimum</td>
 </tr>
 </tbody>
