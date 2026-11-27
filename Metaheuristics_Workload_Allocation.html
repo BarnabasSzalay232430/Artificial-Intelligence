@@ -7796,7 +7796,7 @@ a.anchor-link {
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <main>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a9ab89e6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a5159187">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7839,7 +7839,7 @@ a.anchor-link {
 </tr>
 <tr>
 <td>4</td>
-<td>Additional experiments beyond the brief: which repair weights work best (H2), and when the population helps</td>
+<td>Additional experiments: which repair weights work best (H2), and when the population helps</td>
 <td>n=90, m=5</td>
 </tr>
 <tr>
@@ -7854,7 +7854,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=676cc64f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=84b108bb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7864,7 +7864,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6b7bb803">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b207d495">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7900,7 +7900,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cb766862">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dd363bca">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8030,18 +8030,18 @@ a.anchor-link {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b142467b">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8101b458">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>Tightness</strong> is a resource's capacity divided by the total amount all models together would need. On Instance 2, resource 2 can only cover a third of the total demand (0.33), while resources 4 and 5 could cover almost all of it (0.95, 0.91). This is a first hint that resource 2 is the bottleneck, which §0.2 confirms.</p>
-<h3 id="0.1-Reference-optimum-(answer-key-for-scoring)">0.1 Reference optimum (answer key for scoring)<a class="anchor-link" href="#0.1-Reference-optimum-(answer-key-for-scoring)">¶</a></h3><p>The instances are small enough for an exact algorithm (branch and bound, via SciPy's mixed-integer solver <code>scipy.optimize.milp</code>) to find the <strong>true best selection</strong>, i.e. the global optimum. It is used <strong>only</strong> to score results: the optimality gap, $100\,(f^*-f)/f^*$ (how far a run falls short of the best, in %), and the success rate (how many runs reach it).</p>
+<h3 id="0.1-Reference-optimum-(answer-key-for-evaluating)">0.1 Reference optimum (answer key for evaluating)<a class="anchor-link" href="#0.1-Reference-optimum-(answer-key-for-evaluating)">¶</a></h3><p>The instances are small enough for an exact algorithm (branch and bound, via SciPy's mixed-integer solver <code>scipy.optimize.milp</code>) to find the <strong>true best selection</strong>, i.e. the global optimum. It is used <strong>only</strong> to score results: the optimality gap, $100\,(f^*-f)/f^*$ (how far a run falls short of the best, in %), and the success rate (how many runs reach it).</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b9712f7b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f6559a4b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8088,7 +8088,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f2fde271">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b45288cd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8105,7 +8105,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=316be49e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a5a2f870">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8169,27 +8169,15 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Instance 1 (n=28, m=2): shadow prices = [  4.4  107.28]   Lagrangian upper bound = 131,637.5  (true optimum 130,883)</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagrangian upper bound = 11,194.7  (true optimum 11,191)
+<pre>Instance 1 (n=28, m=2): shadow prices = [  4.4  107.28]   Lagrangian upper bound = 131,637.5  (true optimum 130,883)
+Instance 2 (n=90, m=5): shadow prices = [0.    2.769 0.    0.    0.   ]   Lagrangian upper bound = 11,194.7  (true optimum 11,191)
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cdadd7de">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e63264e4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8200,7 +8188,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=28ad50d4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f54ee7a6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8240,7 +8228,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=057787d3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=09c0cffd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8295,7 +8283,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=bf91f137">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7909668b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8319,7 +8307,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=55aa5c37">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=232e7a75">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8432,7 +8420,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b407da52">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1a91c827">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8442,7 +8430,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=36038e78">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c353a7a3">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8484,7 +8472,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f77b4430">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=94cbcf02">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8494,7 +8482,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=fe644ca1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=549690c7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8576,7 +8564,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=64aa8746">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2d8ba7e0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8592,7 +8580,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=351298e5">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b4b20e0b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8676,7 +8664,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=38938666">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=436bdeda">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8734,7 +8722,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2178f39">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9a6827da">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8750,7 +8738,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=457524da">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=830af171">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8767,7 +8755,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
             <span class="n">load</span> <span class="o">=</span> <span class="n">I</span><span class="o">.</span><span class="n">R</span> <span class="o">@</span> <span class="n">x</span>
             <span class="k">assert</span> <span class="p">(</span><span class="n">load</span> <span class="o">&lt;=</span> <span class="n">I</span><span class="o">.</span><span class="n">b</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>                                            <span class="c1"># feasible: no limit exceeded</span>
             <span class="k">assert</span> <span class="ow">not</span> <span class="p">((</span><span class="n">I</span><span class="o">.</span><span class="n">R</span><span class="p">[:,</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">I</span><span class="o">.</span><span class="n">b</span> <span class="o">-</span> <span class="n">load</span><span class="p">)[:,</span> <span class="kc">None</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>   <span class="c1"># full: no unselected model fits</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">"1. repair: 40,000 random vectors -&gt; all feasible and maximal"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"1. repair: 40,000 random vectors -&gt; all feasible and full"</span><span class="p">)</span>
 
 <span class="c1"># 2. Evaluator: a 4th evaluation on a budget of 3 must be refused</span>
 <span class="n">ev</span> <span class="o">=</span> <span class="n">Evaluator</span><span class="p">(</span><span class="n">I1</span><span class="p">,</span> <span class="mi">3</span><span class="p">);</span> <span class="p">[</span><span class="n">ev</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">I1</span><span class="o">.</span><span class="n">n</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">int8</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">)]</span>
@@ -8803,7 +8791,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>1. repair: 40,000 random vectors -&gt; all feasible and maximal
+<pre>1. repair: 40,000 random vectors -&gt; all feasible and full
 2. evaluator: budget strictly enforced
 </pre>
 </div>
@@ -8820,7 +8808,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=761fcabc">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7943c17b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8873,7 +8861,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d50cf4f7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7bd8f7fb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -8958,8 +8946,8 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 <td>0</td>
 <td>never</td>
 <td>45.9</td>
-<td>0.21</td>
-<td>71</td>
+<td>0.25</td>
+<td>83</td>
 </tr>
 <tr>
 <th>Static penalty</th>
@@ -8972,8 +8960,8 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 <td>0</td>
 <td>never</td>
 <td>44.8</td>
-<td>0.21</td>
-<td>71</td>
+<td>0.25</td>
+<td>84</td>
 </tr>
 <tr>
 <th>Repair (shadow-price weights)</th>
@@ -8986,8 +8974,8 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 <td>100</td>
 <td>56</td>
 <td>100.0</td>
-<td>0.51</td>
-<td>171</td>
+<td>0.62</td>
+<td>207</td>
 </tr>
 </tbody>
 </table>
@@ -8997,7 +8985,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c1145569">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=739423de">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9017,7 +9005,7 @@ Instance 2 (n=90, m=5): optimum f* = 11,191  (51 models)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=8849dea7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=498b58a9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9068,18 +9056,18 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dc864ba4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9387740c">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>How to read the convergence plots</strong> (the same format is used throughout): the line is the median best-so-far value over the 30 runs, the shaded band covers the middle half of the runs (25th to 75th percentile), and the dashed line is the true optimum. The horizontal axis (evaluations) is logarithmic (1, 10, 100, 1,000), so the whole run, from the fast early search to the long tail, fits in one plot. The vertical axis (utility) is zoomed in on values near the optimum so that the final differences are visible. That is why a line can enter the plot part-way along, before that point, its median utility is still below the visible range.</p>
+<p><strong>How to read the convergence plots</strong> (the same format is used throughout): the line is the median best-so-far value over the 30 runs, the shaded band covers the middle half of the runs (25th to 75th percentile), and the dashed line is the true optimum. The horizontal axis (evaluations) is logarithmic (1, 10, 100, 1,000), so the whole run, from the fast early search to the long tail, fits in one plot. The vertical axis (utility) is zoomed in on values near the optimum so that the final differences are visible. A line can therefore enter the plot part-way along, because before that point its median utility is still below the visible range.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6572163f">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=90c1d948">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9096,14 +9084,14 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=31a58085">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a98be1b6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h2 id="Part-2:-Advanced-metaheuristic-(Instance-2,-n-=-90,-m-=-5)">Part 2: Advanced metaheuristic (Instance 2, n = 90, m = 5)<a class="anchor-link" href="#Part-2:-Advanced-metaheuristic-(Instance-2,-n-=-90,-m-=-5)">¶</a></h2><h3 id="P2.1-Algorithm-choice:-steady-state-GA-with-greedy-repair-(after-Chu-&amp;-Beasley,-1998)">P2.1 Algorithm choice: steady-state GA with greedy repair (after Chu &amp; Beasley, 1998)<a class="anchor-link" href="#P2.1-Algorithm-choice:-steady-state-GA-with-greedy-repair-(after-Chu-&amp;-Beasley,-1998)">¶</a></h3><p>The Chu–Beasley GA is a well-known population method for the 0-1 multidimensional knapsack problem, tested on the standard OR-Library benchmarks for this problem type. I reimplemented its core ideas from scratch, with three implementation details of our own:</p>
+<h2 id="Part-2:-Advanced-metaheuristic-(Instance-2,-n-=-90,-m-=-5)">Part 2: Advanced metaheuristic (Instance 2, n = 90, m = 5)<a class="anchor-link" href="#Part-2:-Advanced-metaheuristic-(Instance-2,-n-=-90,-m-=-5)">¶</a></h2><h3 id="P2.1-Algorithm-choice:-steady-state-GA-with-greedy-repair-(after-Chu-&amp;-Beasley,-1998)">P2.1 Algorithm choice: steady-state GA with greedy repair (after Chu &amp; Beasley, 1998)<a class="anchor-link" href="#P2.1-Algorithm-choice:-steady-state-GA-with-greedy-repair-(after-Chu-&amp;-Beasley,-1998)">¶</a></h3><p>The Chu–Beasley GA is a well-known population method for the 0-1 multidimensional knapsack problem, tested on the standard OR-Library benchmarks for this problem type. We reimplemented its core ideas from scratch, with three implementation details of our own:</p>
 <ul>
 <li><strong>one repair interface for both algorithms</strong>: the same repair code serves the hill climber (Part 1) and the GA;</li>
 <li><strong>duplicates never use the budget</strong>: as in Chu &amp; Beasley, children identical to a population member are discarded; here the check happens before the child is evaluated (using a hash set), so duplicates never count towards the evaluation budget;</li>
@@ -9154,7 +9142,7 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=08b08b42">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4e747d6b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9236,8 +9224,8 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 <td>100</td>
 <td>340</td>
 <td>100.0</td>
-<td>3.96</td>
-<td>792</td>
+<td>4.98</td>
+<td>996</td>
 <td>16,450</td>
 </tr>
 </tbody>
@@ -9247,7 +9235,7 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7c5233d8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=04a35f4a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9284,7 +9272,7 @@ Repair vs Static penalty : Mann-Whitney U=900, p=6.05e-13, A12=1.00 (large)
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=15284b59">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2ee6a221">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9405,7 +9393,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=2ba233fb">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=4fe8cde8">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9422,7 +9410,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f6f4f2b0">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=803b9ab9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9441,12 +9429,12 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <li><strong>Equal budget:</strong> 5,000 fitness evaluations per run, counted by the shared <code>Evaluator</code>, so neither variant can evaluate more.</li>
 <li><strong>M = 30 independent runs per variant.</strong> Run <em>k</em> of each variant uses seed 42 + k. The two variants make different random choices from the first step onwards, so the two sets of runs are treated as <strong>independent samples</strong>.</li>
 <li><strong>Only the constraint handling changes.</strong> Everything else stays fixed: steady-state GA, μ = 100, binary tournament, uniform crossover, pₘ = 1/n, duplicate rejection.</li>
-<li><strong>Statistics:</strong> one-sided <strong>Mann–Whitney U</strong> test at α = 0.05. It is non-parametric, so it does not assume normally distributed results, which matters here because many runs end exactly at the optimum. The Wilcoxon signed-rank test is meant for paired samples; our runs are independent, so the Mann–Whitney U test is the appropriate choice. It is reported with the <strong>Vargha–Delaney A12</strong> effect size (Vargha &amp; Delaney, 2000) (the chance that a random run of one variant beats a random run of the other), as recommended for randomised algorithms by Arcuri &amp; Briand (2011).</li>
+<li><strong>Statistics:</strong> one-sided <strong>Mann–Whitney U</strong> test at α = 0.05. It is non-parametric, so it does not assume normally distributed results, which matters here because many runs end exactly at the optimum. The Wilcoxon signed-rank test is meant for paired samples; our runs are independent, so the Mann–Whitney U test is the appropriate choice. It is reported with the <strong>Vargha–Delaney A12</strong> effect size (Vargha &amp; Delaney, 2000), which gives the chance that a random run of one variant beats a random run of the other, as recommended for randomised algorithms by Arcuri &amp; Briand (2011).</li>
 </ul>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9ab5cc31">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=17bc3969">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9531,8 +9519,8 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <td>100</td>
 <td>340</td>
 <td>100.0</td>
-<td>3.96</td>
-<td>792</td>
+<td>4.98</td>
+<td>996</td>
 <td>16,450</td>
 </tr>
 <tr>
@@ -9546,8 +9534,8 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <td>0</td>
 <td>never</td>
 <td>58.7</td>
-<td>0.53</td>
-<td>106</td>
+<td>0.65</td>
+<td>129</td>
 <td>196</td>
 </tr>
 </tbody>
@@ -9558,7 +9546,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b10e8c6e">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=797d0f61">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9568,7 +9556,7 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6870c6f9">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e3513fcd">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9613,14 +9601,14 @@ deployed model indices: [0, 4, 6, 8, 9, 10, 11, 12, 15, 17, 18, 21, 22, 25, 29, 
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>H1  Repair vs Penalty: median 11,191 vs 11,157;  U=900, p=6.01e-13, A12=1.00 (large)  -&gt;  reject H0 at alpha=0.05
-CPU cost per evaluation: repair 792 µs, penalty 106 µs  -&gt;  ratio 7.5x
+CPU cost per evaluation: repair 996 µs, penalty 129 µs  -&gt;  ratio 7.7x
 </pre>
 </div>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86a40749">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=250da0ad">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9631,7 +9619,7 @@ CPU cost per evaluation: repair 792 µs, penalty 106 µs  -&gt;  ratio 7.5x
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=13a99b09">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f5470e75">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9715,8 +9703,8 @@ CPU cost per evaluation: repair 792 µs, penalty 106 µs  -&gt;  ratio 7.5x
 <td>100</td>
 <td>340</td>
 <td>100.0</td>
-<td>3.96</td>
-<td>792</td>
+<td>4.98</td>
+<td>996</td>
 <td>16,450</td>
 </tr>
 <tr>
@@ -9730,8 +9718,8 @@ CPU cost per evaluation: repair 792 µs, penalty 106 µs  -&gt;  ratio 7.5x
 <td>97</td>
 <td>10,124</td>
 <td>46.9</td>
-<td>4.05</td>
-<td>108</td>
+<td>5.25</td>
+<td>140</td>
 <td>3,032</td>
 </tr>
 </tbody>
@@ -9749,7 +9737,7 @@ CPU cost per evaluation: repair 792 µs, penalty 106 µs  -&gt;  ratio 7.5x
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=82441ee5">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d2a748b5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9812,7 +9800,7 @@ CPU cost per evaluation: repair 792 µs, penalty 106 µs  -&gt;  ratio 7.5x
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2ca235c">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6f5acced">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9824,7 +9812,7 @@ CPU cost per evaluation: repair 792 µs, penalty 106 µs  -&gt;  ratio 7.5x
 <li><strong>§4.1 Which repair weights work best?</strong> The repair is the most problem-specific part of the design. Do the shadow prices actually matter, or would a simpler weighting do?</li>
 <li><strong>§4.2 Does the population help?</strong> The GA solved Instance 2 easily. Would the Part 1 hill climber have done just as well, and if so, when is the GA worth it?</li>
 </ul>
-<h3 id="4.1-Which-repair-weights-work-best?">4.1 Which repair weights work best?<a class="anchor-link" href="#4.1-Which-repair-weights-work-best?">¶</a></h3><p>The repair ranks models by value for money, utility ÷ weighted resource use, and the weights decide which resources count. We compare:</p>
+<h3 id="4.1-Which-repair-weights-work-best?">4.1 Which repair weights work best?<a class="anchor-link" href="#4.1-Which-repair-weights-work-best?">¶</a></h3><p>The repair ranks models by their value-to-weight ratio (utility ÷ weighted resource use), and the weights decide which resources count. We compare:</p>
 <ul>
 <li><strong>Shadow-price weights</strong> (used so far): $p_j/\sum_i \lambda_i r_{ij}$. Only scarce resources count; on Instance 2 that is resource 2 alone.</li>
 <li><strong>Capacity-normalised weights:</strong> $p_j/\sum_i r_{ij}/b_i$. Each resource counts as a fraction of its capacity, and all five count equally. This is the usual default, also used in the module's lab notebook.</li>
@@ -9836,7 +9824,7 @@ CPU cost per evaluation: repair 792 µs, penalty 106 µs  -&gt;  ratio 7.5x
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7577a391">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=207f5ed1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -9935,8 +9923,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100</td>
 <td>340</td>
 <td>100.0</td>
-<td>3.96</td>
-<td>792</td>
+<td>4.98</td>
+<td>996</td>
 <td>16,450</td>
 </tr>
 <tr>
@@ -9950,8 +9938,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100</td>
 <td>659</td>
 <td>100.0</td>
-<td>2.35</td>
-<td>470</td>
+<td>3.01</td>
+<td>602</td>
 <td>5,785</td>
 </tr>
 </tbody>
@@ -9961,7 +9949,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=00b3fe65">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ed79848e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10014,7 +10002,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=25e3daf4">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b2ff66d0">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10022,12 +10010,12 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><strong>H2 is supported.</strong> Both repairs reach the optimum eventually, because the GA can make up for a weaker repair given enough evaluations. But the shadow-price repair gets there in significantly fewer evaluations: a median of 340 against 659, roughly half as many, a large effect (A12 = 0.01, i.e. the shadow-price run needs fewer evaluations in almost every pairing). The convergence plot shows the same: the shadow-price repair is ahead early on, and both have caught up by about 1,000 evaluations.</p>
 <p><strong>Why it happens.</strong> The two rankings are similar but not identical (Spearman ρ = 0.84), and the models they disagree on are exactly the ones that decide the optimum. The shadow-price greedy alone, with no search at all, already gets within 0.21 % of the optimum, while the normalised greedy is 3.32 % away. A better ranking gives a better starting population <em>and</em> a better repair of every child. The normalised repair uses <em>less</em> computing time per evaluation, because it converges later and so produces fewer duplicates.</p>
-<p><strong>Takeaway:</strong> the repair is where knowledge about the problem enters the GA, and shadow prices are a cheap, well-founded way to provide it. The difference is in <em>how fast</em> the optimum is found, not in <em>whether</em> it is found, which is why evaluations-to-optimum number is reported alongside final quality.</p>
+<p><strong>Takeaway:</strong> the repair is where knowledge about the problem enters the GA, and shadow prices are a cheap, well-founded way to provide it. The difference is in <em>how fast</em> the optimum is found, not in <em>whether</em> it is found, which is why the number of evaluations to the optimum is reported alongside final quality.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=01aed857">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ca59787b">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10038,7 +10026,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0cd313de">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d483380f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10124,8 +10112,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100</td>
 <td>340</td>
 <td>100.0</td>
-<td>3.96</td>
-<td>792</td>
+<td>4.98</td>
+<td>996</td>
 <td>16,450</td>
 </tr>
 <tr>
@@ -10139,8 +10127,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100</td>
 <td>294</td>
 <td>100.0</td>
-<td>1.02</td>
-<td>205</td>
+<td>1.24</td>
+<td>249</td>
 <td>–</td>
 </tr>
 </tbody>
@@ -10157,7 +10145,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9a93f8e3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=da36b93f">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10261,8 +10249,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>100</td>
 <td>171</td>
 <td>100.0</td>
-<td>3.00</td>
-<td>1,000</td>
+<td>3.42</td>
+<td>1,140</td>
 <td>8,536</td>
 </tr>
 <tr>
@@ -10276,8 +10264,8 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 <td>40</td>
 <td>1,505</td>
 <td>100.0</td>
-<td>0.75</td>
-<td>251</td>
+<td>1.01</td>
+<td>336</td>
 <td>–</td>
 </tr>
 </tbody>
@@ -10294,7 +10282,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=3882e9b7">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b72ce308">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10329,7 +10317,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=784efa27">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=86dfdc4a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10342,7 +10330,7 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c654e5a6">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d9905917">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -10350,14 +10338,14 @@ Pure greedy (ADD from empty), no search: shadow-price = 11,167 (gap 0.21 %), nor
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
 <h2 id="5.-Conclusions-and-limitations">5. Conclusions and limitations<a class="anchor-link" href="#5.-Conclusions-and-limitations">¶</a></h2><ol>
-<li><strong>Part 1:</strong> on Instance 1, the constraint handling decided the outcome. With the same moves and budget, the HC with a greedy repair finds the true optimum in 30/30 runs, while the penalty versions never find it.</li>
+<li><strong>Part 1:</strong> on Instance 1, the constraint handling decided the outcome. With the same moves and budget, the hill climber with a greedy repair finds the true optimum in 30/30 runs, while the penalty versions never find it.</li>
 <li><strong>Part 2:</strong> a steady-state GA built from scratch, with shadow-price repair (prices computed by our own Lagrangian routine), uniform crossover and duplicate rejection, finds the true optimum of Instance 2 in 30/30 runs.</li>
 <li><strong>Part 3:</strong> H1 is supported only with equal <em>evaluation</em> budgets (A12 = 1.0), but <strong>not</strong> with roughly equal computing time, where a well-chosen static penalty catches up (29/30 optimal). The repair GA still reaches the optimum about 4× sooner in real time, and most of its extra cost comes from avoidable duplicates.</li>
 <li><strong>Additional experiments:</strong> shadow-price weights make the repair about twice as efficient as capacity-normalised weights (H2, large effect). The GA and the hill climber perform equally on the original instance, but on a harder instance with two scarce resources the GA reaches the optimum in every run, while the climber manages only 12/30.</li>
 </ol>
 <p><strong>Limitations.</strong></p>
 <ul>
-<li><em>Generalisation:</em> there is only one challenge instance (Instance 2; Instance 1 is the small prototyping instance), and it has a single scarce resource. On instances where several resources are scarce, the shadow prices spread across resources and the H2 advantage should shrink. Testing that would need more instances with tighter constraints (e.g. the OR-Library <em>mknapcb</em> set).</li>
+<li><em>Generalisation:</em> there is only one challenge instance (Instance 2; Instance 1 is the small prototyping instance), and it has a single scarce resource. On instances where several resources are scarce, the shadow prices spread across resources and the H2 advantage is likely to shrink. Testing that would need more instances with tighter constraints (e.g. the OR-Library <em>mknapcb</em> set).</li>
 <li><em>What the evaluation count measures:</em> it ignores the cost of repair, which is why §P3.4 adds a computing-time check. Absolute times depend on the machine; the relative ranking is what matters.</li>
 <li><em>Settings:</em> the penalty weight λ was chosen by a rule rather than tuned, and an adaptive penalty (Hadj-Alouane &amp; Bean, 1997), whose weight changes during the search, was not tested; it could make the penalty variant stronger. Uniform crossover, pₘ = 1/n and μ = 100 were not tuned separately for each variant. Both variants share them, so the comparison is fair, but other settings could change the effect sizes.</li>
 <li><em>Statistics:</em> 30 runs per variant, non-parametric tests and effect sizes.</li>
